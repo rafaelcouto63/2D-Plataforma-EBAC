@@ -18,6 +18,13 @@ public class Player : MonoBehaviour
     public float jumpScaleX = 0.7f;
     public float animationDuration = 0.3f;
     private float _currentSpeed;
+    public float normalScale = 1;
+    
+    [Header("Animation Player")]
+
+    public string boolRun = "Run";
+    public Animator animator;
+
    
     private void Update()
     {
@@ -30,17 +37,27 @@ public class Player : MonoBehaviour
       if(Input.GetKey(KeyCode.LeftShift))
       {
         _currentSpeed = speedRun;
+        animator.speed = 2;
       } else {
         _currentSpeed = speed;
+        animator.speed = 1;
       }
     
       if(Input.GetKey(KeyCode.LeftArrow))
         {
            myRigidbody.velocity = new Vector2(-_currentSpeed, myRigidbody.velocity.y);
+           myRigidbody.transform.localScale = new Vector3(-1,1,1)* normalScale;
+           animator.SetBool(boolRun,true);
         }
-        if(Input.GetKey(KeyCode.RightArrow))
+        else if(Input.GetKey(KeyCode.RightArrow))
         {
            myRigidbody.velocity = new Vector2(_currentSpeed, myRigidbody.velocity.y);
+           myRigidbody.transform.localScale = new Vector3(1,1,1)* normalScale;
+           animator.SetBool(boolRun,true);
+        }
+        else
+        {
+           animator.SetBool(boolRun, false);
         }
 
         if(myRigidbody.velocity.x > 0)
@@ -59,7 +76,8 @@ public class Player : MonoBehaviour
        if(Input.GetKeyDown(KeyCode.Space))
        {
         myRigidbody.velocity = Vector2.up * forcejump;
-        myRigidbody.transform.localScale = Vector2.one;
+        
+        myRigidbody.transform.localScale = Vector2.one * normalScale;
 
         DOTween.Kill(myRigidbody.transform);
         
