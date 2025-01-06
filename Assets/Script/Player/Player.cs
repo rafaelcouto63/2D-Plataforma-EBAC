@@ -77,8 +77,6 @@ public class Player : MonoBehaviour
        {
         myRigidbody.velocity = Vector2.up * forcejump;
         
-        myRigidbody.transform.localScale = Vector2.one * normalScale;
-
         DOTween.Kill(myRigidbody.transform);
         
         ScaleJump();
@@ -88,6 +86,6 @@ public class Player : MonoBehaviour
     private void ScaleJump()
     {
        myRigidbody.transform.DOScaleY(jumpScaleY, animationDuration).SetLoops(2, LoopType.Yoyo);
-       myRigidbody.transform.DOScaleX(jumpScaleX, animationDuration).SetLoops(2, LoopType.Yoyo);
+       //myRigidbody.transform.DOScaleX(jumpScaleX, animationDuration).SetLoops(2, LoopType.Yoyo);
     }
 }
