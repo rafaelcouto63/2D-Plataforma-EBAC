@@ -1015,6 +1015,7 @@ MonoBehaviour:
   damage: 10
   animator: {fileID: 694283191}
   triggerAttack: Attack
+  triggerKill: Death
   healthBase: {fileID: 346840643}
 --- !u!50 &346840642
 Rigidbody2D:
@@ -1049,10 +1050,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 54bfde085994515439f0739c42ac52b8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  StartLife: 10
+  StartLife: 5
   _currentLife: 0
   destroyOnKill: 1
-  delayToKill: 0
+  delayToKill: 0.65
   flashColor: {fileID: 0}
 --- !u!114 &346840644
 MonoBehaviour:
@@ -2818,6 +2819,7 @@ MonoBehaviour:
   damage: 10
   animator: {fileID: 0}
   triggerAttack: Attack
+  triggerKill: Death
   healthBase: {fileID: 0}
 --- !u!4 &916514416
 Transform:
@@ -4778,6 +4780,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   myRigidbody: {fileID: 1595523890}
+  _healthBase: {fileID: 1595523894}
   friction: {x: -0.3, y: 0}
   speed: 16
   speedRun: 23
@@ -4787,6 +4790,7 @@ MonoBehaviour:
   animationDuration: 0.3
   normalScale: 1
   boolRun: Run
+  triggerDeath: Death
   animator: {fileID: 2117215101}
 --- !u!114 &1595523894
 MonoBehaviour:
@@ -4803,7 +4807,7 @@ MonoBehaviour:
   StartLife: 10
   _currentLife: 0
   destroyOnKill: 1
-  delayToKill: 0.3
+  delayToKill: 1.5
   flashColor: {fileID: 2117215102}
 --- !u!1 &1613759026
 GameObject:
