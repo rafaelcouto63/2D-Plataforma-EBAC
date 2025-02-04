@@ -20,10 +20,10 @@ public class HealthBase : MonoBehaviour
        Init();
        if(flashColor == null) 
        {
-          flashColor = GetComponent<FlashColor>();
+          flashColor = GetComponentInChildren<FlashColor>();
        }
     }
-
+    
     private void Init()
     {
         _isDead = false;
