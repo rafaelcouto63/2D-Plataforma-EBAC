@@ -8,9 +8,18 @@ public class Player : MonoBehaviour
     public Rigidbody2D myRigidbody;
     public HealthBase _healthBase;
 
-    [Header("Player Setup")]
-   
+   [Header("Player Setup")]
     public SOPlayerSetup soPlayerSetup;
+    private float _currentSpeed;
+    private float normalScale = 1;
+    private Animator _currentPlayer;
+
+   [Header("Jump Collision Setup")]
+   public Collider2D collider2D;
+   public float distToGround;
+   public float spaceToGround;
+   public ParticleSystem jumpVFX;
+
 
     /*[Header("Speed Setup")]
     public Vector2 friction = new Vector2(-.1f,0);
@@ -31,10 +40,6 @@ public class Player : MonoBehaviour
     public string boolRun = "Run";
     public Animator animator;
     public string triggerDeath = "Death";*/
-    private float _currentSpeed;
-    private float normalScale = 1;
-
-    private Animator _currentPlayer;
 
 
     private void Awake()
@@ -47,6 +52,12 @@ public class Player : MonoBehaviour
       _currentPlayer = Instantiate(soPlayerSetup.player,transform);
     }
 
+    private bool IsGrounded()
+    {
+      Debug.DrawRay(transform.position, -Vector2.up, Color.magenta, distToGround + spaceToGround);
+      return Physics2D.Raycast(transform.position,-Vector2.up, distToGround + spaceToGround);
+    }
+
     private void OnPlayerKill()
     {
        _healthBase.OnKill -= OnPlayerKill;
@@ -55,6 +66,7 @@ public class Player : MonoBehaviour
 
     private void Update()
     {
+        IsGrounded();
         Movement();
         Jump();
     }
@@ -100,7 +112,7 @@ public class Player : MonoBehaviour
 
     private void Jump()
     {
-       if(Input.GetKeyDown(KeyCode.Space))
+       if(Input.GetKeyDown(KeyCode.Space) && IsGrounded())
        {
         myRigidbody.velocity = Vector2.up * soPlayerSetup.forcejump;
 
@@ -109,6 +121,15 @@ public class Player : MonoBehaviour
         DOTween.Kill(myRigidbody.transform);
         
         ScaleJump();
+        JumpVFX();
+       }
+    }
+
+    private void JumpVFX()
+    {
+       if(jumpVFX != null) 
+       {
+         jumpVFX.Play();
        }
     }
 
