@@ -32,7 +32,7 @@ public class ItemManager : MonoBehaviour
         //UpdateCoinText();
     }
 
-    public void AddCoin(int amount = 1)
+    public void AddCoin(int amount)
     {
         coins.value += amount;
         //UpdateCoinText();
