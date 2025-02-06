@@ -1076,6 +1076,11 @@ MonoBehaviour:
   - {fileID: 2095244874}
   color: {r: 0.9716981, g: 0.42626378, b: 0.42626378, a: 1}
   duration: 0.3
+--- !u!82 &366208003 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 4591977383796171408, guid: ae88494ea2b0fef4ea2eafd892fe0023, type: 3}
+  m_PrefabInstance: {fileID: 8490284939560521381}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &418383860
 GameObject:
   m_ObjectHideFlags: 0
@@ -20406,6 +20411,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2071218702228202728, guid: ae88494ea2b0fef4ea2eafd892fe0023, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1.535402
+      objectReference: {fileID: 0}
+    - target: {fileID: 2071218702228202728, guid: ae88494ea2b0fef4ea2eafd892fe0023, type: 3}
       propertyPath: m_LocalPosition.x
       value: -4.4399996
       objectReference: {fileID: 0}
@@ -20449,5 +20458,13 @@ PrefabInstance:
       propertyPath: m_Name
       value: Prefab_CoinBag
       objectReference: {fileID: 0}
+    - target: {fileID: 6958478434183118950, guid: ae88494ea2b0fef4ea2eafd892fe0023, type: 3}
+      propertyPath: timeToHide
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6958478434183118950, guid: ae88494ea2b0fef4ea2eafd892fe0023, type: 3}
+      propertyPath: audioSource
+      value: 
+      objectReference: {fileID: 366208003}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ae88494ea2b0fef4ea2eafd892fe0023, type: 3}
