@@ -7919,6 +7919,14 @@ PrefabInstance:
       propertyPath: color.r
       value: 0.9622642
       objectReference: {fileID: 0}
+    - target: {fileID: 4851315438669364708, guid: 00afc9fb4087652419d090da0b825d97, type: 3}
+      propertyPath: audioClipList.Array.size
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 4851315438669364708, guid: 00afc9fb4087652419d090da0b825d97, type: 3}
+      propertyPath: audioClipList.Array.data[10]
+      value: 
+      objectReference: {fileID: 8300000, guid: 0f7237cf710e142909810e114ce1d2fb, type: 3}
     - target: {fileID: 8007466312498025151, guid: 00afc9fb4087652419d090da0b825d97, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -7969,6 +7977,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8835229685202505509, guid: 00afc9fb4087652419d090da0b825d97, type: 3}
       propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9122450781312936560, guid: 00afc9fb4087652419d090da0b825d97, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 9122450781312936560, guid: 00afc9fb4087652419d090da0b825d97, type: 3}
+      propertyPath: m_PlayOnAwake
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
