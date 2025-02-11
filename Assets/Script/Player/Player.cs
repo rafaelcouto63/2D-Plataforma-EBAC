@@ -19,7 +19,7 @@ public class Player : MonoBehaviour
    public float distToGround;
    public float spaceToGround;
    public ParticleSystem jumpVFX;
-
+   public AudioSource audioSource;
 
     /*[Header("Speed Setup")]
     public Vector2 friction = new Vector2(-.1f,0);
@@ -130,6 +130,11 @@ public class Player : MonoBehaviour
        if(jumpVFX != null) 
        {
          jumpVFX.Play();
+       }
+       
+        if(audioSource != null) 
+       {
+           audioSource.Play();
        }
     }
 
